@@ -1,6 +1,6 @@
 import { codingAgent } from "../utils/agent";
 
-export async function POST(request: Request): Promise<Response> {
+export async function POST(request: Request) {
   const body = await request.json();
   const { prompt }: { prompt: string } = body;
 
