@@ -55,10 +55,12 @@ export const editFile = async (
     return { error: `String "${old_str}" not found in file` };
   }
 
-  // Write the updated content back using sandbox
-  await sandbox.runCommand("bash", [
-    "-c",
-    `cat > ${path} << 'EOF'\n${updatedContent}\nEOF`,
+  // Write the updated content back using sandbox writeFiles method
+  await sandbox.writeFiles([
+    {
+      path: path,
+      stream: Buffer.from(updatedContent, "utf8"),
+    },
   ]);
   console.log(`File edited successfully: ${path}`);
   // Get and print the updated file content
