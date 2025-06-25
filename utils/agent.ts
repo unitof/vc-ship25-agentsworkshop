@@ -1,3 +1,4 @@
+import { generateText, stepCountIs, tool } from "ai";
 import { generateText, tool } from "ai";
 import z from "zod/v4";
 import fs from "fs"; 
@@ -8,6 +9,7 @@ export async function codingAgent(prompt: string) {
     prompt,
     system:
       "You are a coding agent. You will be working with js/ts projects. Your responses must be concise.",
+    stopWhen: stepCountIs(10),
     tools: { 
       list_files: tool({ 
         description:
