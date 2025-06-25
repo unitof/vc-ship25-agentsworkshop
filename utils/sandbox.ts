@@ -81,7 +81,7 @@ export const createPR = async (
 
     const { title, body, branch } = prDetails;
 
-    const branchName = branch || `feature/ai-changes-${Date.now()}`;
+    const branchName = `${ branch || `feature/ai-changes` }-${Date.now()}`;
 
     // Setup git
     await sandbox.runCommand("git", [
@@ -99,7 +99,18 @@ export const createPR = async (
 
     // Create branch and commit changes
     await sandbox.runCommand("git", ["checkout", "-b", branchName]);
-    await sandbox.runCommand("git", ["add", "."]);
+    await sandbox.runCommand("git", [
+      "add",
+      ".",
+      ":!*.tar",
+      ":!*.tar.gz",
+      ":!*.tar.bz2",
+      ":!*.tar.xz",
+      ":!*.tgz",
+      ":!*.tbz",
+      ":!*.tbz2",
+      ":!*.txz",
+    ]);
 
     // Check if there are changes to commit
     const diffResult = await sandbox.runCommand("git", [
@@ -116,7 +127,18 @@ export const createPR = async (
         "-c",
         `echo "AI Agent Activity: ${timestamp}" > .ai-activity.md`,
       ]);
-      await sandbox.runCommand("git", ["add", "."]);
+      await sandbox.runCommand("git", [
+        "add",
+        ".",
+        ":!*.tar",
+        ":!*.tar.gz",
+        ":!*.tar.bz2",
+        ":!*.tar.xz",
+        ":!*.tgz",
+        ":!*.tbz",
+        ":!*.tbz2",
+        ":!*.txz",
+      ]);
     }
 
     await sandbox.runCommand("git", ["commit", "-m", title]);
