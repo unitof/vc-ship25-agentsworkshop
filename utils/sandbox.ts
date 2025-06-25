@@ -80,6 +80,7 @@ export const createPR = async (
       throw new Error("GITHUB_TOKEN environment variable is required");
 
     const { title, body, branch } = prDetails;
+    console.log(`Creating PR with title: ${title}, body: ${body}, branch: ${branch}`);
 
     const branchName = `${ branch || `feature/ai-changes` }-${Date.now()}`;
 
