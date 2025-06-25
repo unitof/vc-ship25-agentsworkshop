@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@vercel/sandbox':
-        specifier: ^0.0.9
-        version: 0.0.9
+        specifier: ^0.0.10
+        version: 0.0.10
       ai:
         specifier: 5.0.0-beta.1
         version: 5.0.0-beta.1(zod@3.25.67)
@@ -218,8 +218,8 @@ packages:
   '@types/node@22.15.30':
     resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
 
-  '@vercel/sandbox@0.0.9':
-    resolution: {integrity: sha512-ye5xmVKuE7L7diJxEcx6k/qHghfPK47Fv6lL1YCs477NLN0djkhTIS+Oju6RmVdPDA88CK8xggCAKMddhjxKAg==}
+  '@vercel/sandbox@0.0.10':
+    resolution: {integrity: sha512-8cpLz5LgZwz4ee1NNbvRxM9B/Ua9wrPQ0KhIIaf+4vpEqDO4mvZPXzYwIOS5LJuZPmnftBw9V9rBEGi0likOAg==}
 
   ai@5.0.0-beta.1:
     resolution: {integrity: sha512-J8yqlEBC/cy6+a8rs+bPukmIPMJn43kxD/TNdm/0tqwBpV2bo5amLkCXbwQ/RQVWnHYP3hPENuQ3cZoToq2eEQ==}
@@ -463,7 +463,7 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@vercel/sandbox@0.0.9':
+  '@vercel/sandbox@0.0.10':
     dependencies:
       async-retry: 1.3.3
       form-data: 3.0.0

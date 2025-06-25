@@ -41,7 +41,7 @@ curl -X POST https://your-deployment.vercel.app/api/agent \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "update readme to say hey were so back",
-    "repoUrl": "https://github.com/nicoalbanese/ai-sdk-langgraph/",
+    "repoUrl": "https://github.com/nicoalbanese/ai-sdk-langgraph/"
   }'
 ```
 
